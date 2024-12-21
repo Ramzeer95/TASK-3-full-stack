@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Message</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        form { display: inline-block; text-align: left; }
+        label, input, textarea { display: block; margin-bottom: 10px; }
+        button { background-color: blue; color: white; padding: 10px; border: none; cursor: pointer; }
+        button:hover { background-color: darkblue; }
+    </style>
+</head>
+<body>
+    <h1>Submit a Message</h1>
+    <form method="post" action="/submit/">
+        {% csrf_token %}
+        <label for="sender">Sender:</label>
+        <input type="text" id="sender" name="sender" required>
+
+        <label for="recipient">Recipient:</label>
+        <input type="text" id="recipient" name="recipient" required>
+
+        <label for="content">Message:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
